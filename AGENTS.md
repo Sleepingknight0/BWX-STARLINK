@@ -6,22 +6,24 @@ This repository is a static, browser-based Starlink 3D explainer. `index.html` i
 
 Runtime media lives under `assets/`:
 
-- `assets/*.jpg` contains Earth textures and the star field.
+- `assets/*.jpg` hold Earth textures and the star field.
 - `assets/gen/` contains generated scene artwork.
 - `assets/real/` contains reference photography.
 - `assets/video/` contains short MP4 sequences.
 
-Keep asset paths relative (for example, `assets/video/orbit.mp4`) so local serving and static hosting behave consistently. Treat `.playwright-cli/` as generated browser-test output, not source.
+Keep asset paths relative (for example, `assets/video/orbit.mp4`) so local serving and static hosting behave consistently. Treat `.playwright-cli/` and `output/playwright/` as generated browser-test output, not source.
 
 ## Build, Test, and Development Commands
 
-No build step or package installation is required. From the repository root, run:
+No application build step is required for local review. From the repository root, serve the site over HTTP:
 
 ```bash
 python -m http.server 8000
 ```
 
 Then open `http://localhost:8000/index.html`. Serving over HTTP is preferred to opening the file directly because browser media and asset-loading behavior can differ under `file://`.
+
+Automated checks use Playwright: run `npm install` then `npm run check` with the server on port 8000.
 
 For a quick syntax/markup review, use browser developer tools and confirm that the console and network panel contain no errors or missing assets.
 
@@ -33,7 +35,7 @@ Preserve Thai UTF-8 text and responsive behavior. Optimize new media before comm
 
 ## Testing Guidelines
 
-There is no automated test suite yet. Manually verify desktop and narrow mobile layouts, boot/loading completion, scene dragging, navigation controls, media playback, lightbox behavior, and reduced-motion handling. Test both HTML variants when shared assets change.
+Automated verification uses Playwright through `npm run check`. Also manually verify desktop and narrow mobile layouts, boot and loading completion, scene dragging, navigation controls, media playback, lightbox behavior, and reduced-motion handling. Test both HTML variants when shared assets change.
 
 ## Commit & Pull Request Guidelines
 
