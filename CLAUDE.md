@@ -21,9 +21,9 @@ python -m http.server 8000
 node scripts/snapshot-starlink-map.mjs
 ```
 
-There is no lint or automated test suite. The only npm dependency is Playwright, used for screenshot-based visual verification (artifacts land in `.playwright-cli/` and `output/playwright/` — both are generated output, never source).
+There is no lint step. The only npm dependency is Playwright, which powers `npm run check` for desktop and mobile verification plus screenshot capture (artifacts land in `.playwright-cli/` and `output/playwright/` — both are generated output, never source).
 
-Manual verification checklist: desktop and narrow-mobile layouts, boot/loading completes, scene dragging, mode switching, media playback, lightbox, keyboard shortcuts, and `prefers-reduced-motion` handling.
+Manual verification checklist: desktop and narrow-mobile layouts, boot and loading completion, scene dragging, mode switching, media playback, lightbox, keyboard shortcuts, and `prefers-reduced-motion` handling.
 
 ## Architecture of index.html
 
