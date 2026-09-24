@@ -39,4 +39,4 @@ Automated verification uses Playwright through `npm run check`. Also manually ve
 
 ## Commit & Pull Request Guidelines
 
-Git history is not included in this checkout. Use short, imperative commit subjects, optionally prefixed by area, such as `ui: improve mobile mission controls`. Pull requests should explain the user-visible change, list manual test steps, identify changed media, and include screenshots or a short recording for visual changes. Never commit credentials or unrelated generated browser artifacts.
+Use short, imperative commit subjects, optionally prefixed by area, such as `ui: improve mobile mission controls`. Pull requests should explain the user-visible change, list manual test steps, identify changed media, and include screenshots or a short recording for visual changes. Never commit credentials or unrelated generated browser artifacts.
